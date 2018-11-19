@@ -1,5 +1,5 @@
 # Atelier Auto
-This is a project I made for a **CPP OOP Class** I took in **2016**. It was to learn and implement OOP Concepts. While it is nothing too fancy and to this date I added to my knowledge from back then, I'm quite happy with the usage of **CRTP** (Curiously Recurring Template Pattern)
+This is a project I made for a **CPP OOP Class** I took in **2016**. It was to learn and implement OOP Concepts.
 
 
 # How to build
