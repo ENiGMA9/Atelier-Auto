@@ -9,20 +9,22 @@
 #include <time.h>
 #endif
 
-class Car: public Vehicle {
+class Car : public Vehicle {
 public:
-	Car() { tag = 'c';strcpy(name,"Masina"); }
+	Car() { tag = 'c'; strcpy(name, "Masina"); }
 };
 
-class Mbike: public Vehicle {
+class Mbike : public Vehicle {
 public:
-	Mbike(){ tag='m';strcpy(name, "Motocicleta");
+	Mbike() {
+		tag = 'm'; strcpy(name, "Motocicleta");
 	}
 };
 
-class Bike: public Vehicle {
+class Bike : public Vehicle {
 public:
-	Bike(){tag='b';strcpy(name, "Bicicleta");
+	Bike() {
+		tag = 'b'; strcpy(name, "Bicicleta");
 	}
 };
 
@@ -60,9 +62,9 @@ int main() {
 	Engine::AddProblem("Defect capital", "cm", 0);
 
 	Direction::AddProblem("Ghidon stramb", "mb", 1, "suruburi:r5");
-	Direction::AddProblem("Roata stramba", "cmb", 1,"roata:1;suruburi:r5");
+	Direction::AddProblem("Roata stramba", "cmb", 1, "roata:1;suruburi:r5");
 	Direction::AddProblem("Defect capital", "cmb", 0);
-	
+
 	Emissions::AddProblem("Vehiculul arde ulei", "cm", 2, "ulei:1;suruburi:r5");
 	Emissions::AddProblem("Vehiculul este anterior anului 2000", "cm", 0, "suruburi:r5");
 	Emissions::AddProblem("Defect capital", "cm", 0);
@@ -71,26 +73,28 @@ int main() {
 	Chassis::AddProblem("Caroserie stramba", "c", 3, "aripa:r2;bara:r1;capota:r1;suruburi:r5");
 	Chassis::AddProblem("Defect capital", "c", 0);
 
-	int choice = 1;
 		printf("Se primeste un vehicul:");
-		srand(time(NULL));
-		choice = rand() % 3 + 1;
-		switch (choice)
-		{case 1:
-			Atelier::receive(Car::Car());
-			break;
-		case 2:
-			Atelier::receive(Mbike::Mbike());
-			break;
-		case 3:
-			Atelier::receive(Bike::Bike());
-			break;
-		default:
-			Atelier::receive(Car::Car());
-			break;
-		}
-		Atelier::diagnose();
-		printf("Total:%d",Atelier::TOTAL_COST);
-		_getch();
+	int choice;
+	printf("Se primeste un vehicul:");
+	srand(time(NULL));
+	choice = rand() % 3 + 1;
+	switch (choice)
+	{
+	case 1:
+		Atelier::receive(Car::Car());
+		break;
+	case 2:
+		Atelier::receive(Mbike::Mbike());
+		break;
+	case 3:
+		Atelier::receive(Bike::Bike());
+		break;
+	default:
+		Atelier::receive(Car::Car());
+		break;
+	}
+	Atelier::diagnose();
+	printf("Total:%d", Atelier::TOTAL_COST);
+	_getch();
 	return 0;
 }

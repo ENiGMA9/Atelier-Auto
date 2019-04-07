@@ -12,7 +12,7 @@ public:
 	static int MANHOUR_COST;
 	Atelier();
 	~Atelier();
-	static void receive(Vehicle obj);
+	static void receive(const Vehicle &obj);
 	//static void damage();
 	static void diagnose();
 };

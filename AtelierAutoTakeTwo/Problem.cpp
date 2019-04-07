@@ -25,7 +25,7 @@ Problem::~Problem() {
 };
 
 void Problem::getMaterials(char src[256]) {
-	int n = strlen(src),z=0,v=0,last;
+	int n = strnlen(src,256),z=0,v=0,last;
 	char aux[32];
 	MatObj *ax;
 	for (int i = 0;i < n;i++)
@@ -43,7 +43,7 @@ void Problem::getMaterials(char src[256]) {
 			v = 0;
 			if (src[i+1] == 'r') {
 				i+=2;
-				while (src[i] != ';' && i <= n)
+				while (i <= n && src[i] != ';')
 				{
 					v = v*(i - last) + src[i] - '0';
 					i++;
