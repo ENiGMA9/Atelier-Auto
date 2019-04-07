@@ -18,7 +18,6 @@ public:
 	Direction directie;
 	Chassis caroserie;
 	Emissions noxe;
-	Vehicle();
 	virtual void damage();
 	virtual void diagnose();
 	void operator=(const Vehicle &v);

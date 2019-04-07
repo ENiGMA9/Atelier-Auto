@@ -3,12 +3,20 @@
 #endif
 
 #include <iostream>
+
+
 Material::Material(char nume[32],short unsigned int cst) {
 	strcpy(name, nume);
 	cost = cst;
-	mats.add(this);
 };
 List<Material> Material::mats;
+
+
+void Material::AddMaterial(char nume[32], short unsigned int cst) {
+
+	mats.add(new Material(nume, cst));
+}
+
 
 Material::Material() {
 }

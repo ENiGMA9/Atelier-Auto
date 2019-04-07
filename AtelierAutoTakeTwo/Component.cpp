@@ -41,7 +41,7 @@ template<class T>
 bool Component<T>::tagIsValid(char flag)
 {
 	List<Problem> *iter = &this->problems;
-	List<Problem> *first = &this->problems;
+	//List<Problem> *first = &this->problems;
 	while (iter)
 	{
 		if (iter->object()->hasTag(flag))
@@ -60,7 +60,6 @@ Problem *Component<T>::getNthWithTag(int n, char z)
 	List<Problem> *iter = &this->problems;
 	int ok = 0;
 	int i = 1;
-	int stallCounter = 0;
 	while (i < n)
 	{
 		if (iter->next)
@@ -72,7 +71,6 @@ Problem *Component<T>::getNthWithTag(int n, char z)
 				{
 					//return iter->object();
 					ok = 1;
-					stallCounter = 1;
 				}
 				else
 				{
@@ -105,16 +103,27 @@ void Component<T>::diagnose()
 	}	
 };
 
+
+template<class T>
+void Component<T>::AddProblem(char nume[256], char flg[64], int mnhrs, char materials[256] = "\n") {
+	Problem *aux = new Problem(nume, flg, mnhrs, materials);
+	Component::problems.add(aux);
+}
+
+/*
 Brakes::Brakes(char nume[256], char flg[64], int mnhrs, char materials[256])
 {
 	Problem *aux = new Problem(nume, flg, mnhrs, materials);
-	this->problems.add(aux);
 };
+
+Brakes::AddP(char nume[256], char flg[64], int mnhrs, char materials[256])
+{
+	this->problems.add(new Problem(nume,flg,mnhrs,materials));
+}
 
 Engine::Engine(char nume[256], char flg[64], int mnhrs, char materials[256])
 {
-	Problem *aux = new Problem(nume, flg, mnhrs, materials);
-	this->problems.add(aux);
+	
 };
 
 Direction::Direction(char nume[256], char flg[64], int mnhrs, char materials[256])
@@ -134,4 +143,4 @@ Chassis::Chassis(char nume[256], char flg[64], int mnhrs, char materials[256])
 	Problem *aux = new Problem(nume, flg, mnhrs, materials);
 	this->problems.add(aux);
 };
-
+*/

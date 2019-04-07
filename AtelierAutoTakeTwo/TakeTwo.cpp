@@ -29,47 +29,47 @@ public:
 
 int main() {
 	//INIT
-	Material("Cupru", 5);
-	Material("Fier", 3);
-	Material("Suruburi", 2);
-	Material("Ulei", 10);
-	Material("placuta1", 5);
-	Material("placuta2", 4);
-	Material("placuta3", 6);
-	Material("placuta4", 7);
-	Material("Disc", 15);
-	Material("Lant", 5);
-	Material("Motor", 40);
-	Material("Roata", 10);
-	Material("Aripa", 5);
-	Material("Capota", 5);
-	Material("Vopsea", 5);
-	Material("Bara", 5);
+	Material::AddMaterial("Cupru", 5);
+	Material::AddMaterial("Fier", 3);
+	Material::AddMaterial("Suruburi", 2);
+	Material::AddMaterial("Ulei", 10);
+	Material::AddMaterial("placuta1", 5);
+	Material::AddMaterial("placuta2", 4);
+	Material::AddMaterial("placuta3", 6);
+	Material::AddMaterial("placuta4", 7);
+	Material::AddMaterial("Disc", 15);
+	Material::AddMaterial("Lant", 5);
+	Material::AddMaterial("Motor", 40);
+	Material::AddMaterial("Roata", 10);
+	Material::AddMaterial("Aripa", 5);
+	Material::AddMaterial("Capota", 5);
+	Material::AddMaterial("Vopsea", 5);
+	Material::AddMaterial("Bara", 5);
 
-	Brakes("Placute fata uzate", "cm", 1, "placuta1:r1;placuta2:r1;suruburi:r5");
-	Brakes("Placute spate uzate", "cm", 1, "placuta3:r1;placuta4:r1;suruburi:r5");
-	Brakes("Disc uzat", "cm", 1, "disc:r2;suruburi:r5");
-	Brakes("Discuri uzate", "c", 2, "disc:r4;suruburi:r5");
-	Brakes("Lant tocit", "b", 1, "lant:1;suruburi:r5");
-	Brakes("Lant lipsa", "b", 1, "lant:1;suruburi:r5");
-	Brakes("Defect capital", "cmb", 0);
+	Brakes::AddProblem("Placute fata uzate", "cm", 1, "placuta1:r1;placuta2:r1;suruburi:r5");
+	Brakes::AddProblem("Placute spate uzate", "cm", 1, "placuta3:r1;placuta4:r1;suruburi:r5");
+	Brakes::AddProblem("Disc uzat", "cm", 1, "disc:r2;suruburi:r5");
+	Brakes::AddProblem("Discuri uzate", "c", 2, "disc:r4;suruburi:r5");
+	Brakes::AddProblem("Lant tocit", "b", 1, "lant:1;suruburi:r5");
+	Brakes::AddProblem("Lant lipsa", "b", 1, "lant:1;suruburi:r5");
+	Brakes::AddProblem("Defect capital", "cmb", 0);
 
-	Engine("Nivel ulei scazut", "cm", 1, "ulei:1;suruburi:r5");
-	Engine("Carburator murdar", "c", 2, "suruburi:r5");
-	Engine("Motor topit", "cm", 5, "motor:1;suruburi:r5");
-	Engine("Defect capital", "cm", 0);
+	Engine::AddProblem("Nivel ulei scazut", "cm", 1, "ulei:1;suruburi:r5");
+	Engine::AddProblem("Carburator murdar", "c", 2, "suruburi:r5");
+	Engine::AddProblem("Motor topit", "cm", 5, "motor:1;suruburi:r5");
+	Engine::AddProblem("Defect capital", "cm", 0);
 
-	Direction("Ghidon stramb", "mb", 1, "suruburi:r5");
-	Direction("Roata stramba", "cmb", 1,"roata:1;suruburi:r5");
-	Direction("Defect capital", "cmb", 0);
+	Direction::AddProblem("Ghidon stramb", "mb", 1, "suruburi:r5");
+	Direction::AddProblem("Roata stramba", "cmb", 1,"roata:1;suruburi:r5");
+	Direction::AddProblem("Defect capital", "cmb", 0);
 	
-	Emissions("Vehiculul arde ulei", "cm", 2, "ulei:1;suruburi:r5");
-	Emissions("Vehiculul este anterior anului 2000", "cm", 0, "suruburi:r5");
-	Emissions("Defect capital", "cm", 0);
+	Emissions::AddProblem("Vehiculul arde ulei", "cm", 2, "ulei:1;suruburi:r5");
+	Emissions::AddProblem("Vehiculul este anterior anului 2000", "cm", 0, "suruburi:r5");
+	Emissions::AddProblem("Defect capital", "cm", 0);
 
-	Chassis("Caroserie corodata de rugina", "c", 8, "vopsea:1;suruburi:r5");
-	Chassis("Caroserie stramba", "c", 3, "aripa:r2;bara:r1;capota:r1;suruburi:r5");
-	Chassis("Defect capital", "c", 0);
+	Chassis::AddProblem("Caroserie corodata de rugina", "c", 8, "vopsea:1;suruburi:r5");
+	Chassis::AddProblem("Caroserie stramba", "c", 3, "aripa:r2;bara:r1;capota:r1;suruburi:r5");
+	Chassis::AddProblem("Defect capital", "c", 0);
 
 	int choice = 1;
 		printf("Se primeste un vehicul:");

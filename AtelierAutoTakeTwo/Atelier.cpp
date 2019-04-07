@@ -14,7 +14,7 @@ int Atelier::MANHOUR_COST = 5;
 
 Vehicle Atelier::cVehicle = Vehicle();
 
-void Atelier::receive(Vehicle obj) {
+void Atelier::receive(const Vehicle obj) {
 	cVehicle = obj;
 	printf("%s\n", cVehicle.name);
 	cVehicle.damage();

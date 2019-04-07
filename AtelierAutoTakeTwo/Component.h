@@ -16,41 +16,38 @@ public:
 	virtual void diagnose();
 	virtual Problem *getNthWithTag(int n, char z);
 	virtual bool tagIsValid(char flag);
+	static void AddProblem(char nume[256], char flg[64], int mnhrs, char materials[256] = "\n");
 };
 
 class Brakes: public Component<Brakes> {
 public:
-	Brakes(char nume[256],char flg[64], int mnhrs, char materials[256] = "\n");
 	Brakes() {};
 	//~Brakes();
 };
 
 class Engine: public Component<Engine> {
 public:
-	Engine(char nume[256], char flg[64], int mnhrs, char materials[256] = "\n");
 	Engine() {};
 	//~Engine();
 };
 
 class Direction: public Component<Direction> {
 public:
-	Direction(char nume[256], char flg[64], int mnhrs, char materials[256] = "\n");
+
 	Direction() {};
 	//~Direction();
 
 };
 
-
 class Emissions: public Component<Emissions> {
 public:
-	Emissions(char nume[256], char flg[64], int mnhrs, char materials[256] = "\n");
 	Emissions() {};
 	//~Emissions();
 };
 
 class Chassis : public Component<Chassis> {
 public:
-	Chassis(char nume[256], char flg[64], int mnhrs, char materials[256] = "\n");
+
 	Chassis() {};
 	//~Chassis();
 };

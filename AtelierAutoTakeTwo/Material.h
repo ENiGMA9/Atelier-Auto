@@ -11,10 +11,12 @@ public:
 	static List<Material> mats;
 	char name[32];
 	short unsigned int cost;
-	Material(char nume[32], short unsigned int cst);
+	static void AddMaterial(char nume[32], short unsigned int cst);
 	Material();
 	//Material();
 	//~Material();
 	static Material *find(char input[32]);
+private:
+	Material(char nume[32], short unsigned int cst);
 };
 #endif

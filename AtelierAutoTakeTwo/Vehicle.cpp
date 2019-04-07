@@ -3,9 +3,6 @@
 #endif
 
 
-Vehicle::Vehicle() {
-};
-
 void Vehicle::damage() {
 	motor.damage(tag);
 	frane.damage(tag);
