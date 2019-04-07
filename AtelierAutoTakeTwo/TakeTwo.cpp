@@ -73,7 +73,6 @@ int main() {
 	Chassis::AddProblem("Caroserie stramba", "c", 3, "aripa:r2;bara:r1;capota:r1;suruburi:r5");
 	Chassis::AddProblem("Defect capital", "c", 0);
 
-		printf("Se primeste un vehicul:");
 	int choice;
 	printf("Se primeste un vehicul:");
 	srand(time(NULL));
